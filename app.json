@@ -5,10 +5,10 @@
     "submenu": "",
     "tabs": [
       {
-        "title": "Kostenlos Flirt Community",
-        "provider": "webview",
+        "title": "",
+        "provider": "wordpress",
         "arguments": [
-          "https://metavers12.github.io/meta/",
+          "",
           "deals"
         ]
       }
