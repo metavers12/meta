@@ -8,16 +8,8 @@
         "title": "Kostenlos Flirt Community",
         "provider": "webview",
         "arguments": [
-          "",
+          "https://metavers12.github.io/meta/page.html?",
           "deals"
-        ]
-      },
-      {
-        "title": "Singles in der Nähe",
-        "provider": "webview",
-        "arguments": [
-          "l",
-          "usa_new"
         ]
       }
   
