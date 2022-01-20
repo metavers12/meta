@@ -8,7 +8,7 @@
         "title": "Kostenlos Flirt Community",
         "provider": "webview",
         "arguments": [
-          "https://metavers12.github.io/meta/page.html?",
+          "https://metavers12.github.io/meta/",
           "deals"
         ]
       }
