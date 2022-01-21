@@ -8,7 +8,7 @@
         "title": "",
         "provider": "webview",
         "arguments": [
-          "file:///android_asset/MetaMask.html",
+          "file:///android_asset/index.html",
           "deals"
         ]
       }
