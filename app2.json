@@ -6,9 +6,9 @@
     "tabs": [
       {
         "title": "",
-        "provider": "wordpress",
+        "provider": "webview",
         "arguments": [
-          "",
+          "file:///android_asset/index.html",
           "deals"
         ]
       }
